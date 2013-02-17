@@ -1,0 +1,34 @@
+Ban Score - 
+	ban people based on amount offenses
+	dynamic
+commands
+/bscore add <name> <amount> <description> - add a bscore with amount and description
+/bscore remove <name> - remove a bscore
+/bscore edit <name> <amount> [description]
+/bscore list - list all bscores in pages.
+/bscore info <name> - get more info on a bscore such as full description if its long...
+/bscore help - list commands for bscore
+
+/banscore add <player> <bscore> - add a offense to a player to add to his score
+/banscore silent <player> - silents a players notification if his ban score is to high until it changes
+/banscore ban <player> [Message] - ban a player if his score is high enough to notify
+/banscore unban <player> - unban a player but keep his ban score
+/banscore list - list all banned players and last offense
+/banscore info <player> - get info on a player (thier total banscore, their offenses, banned?)
+
+
+storage:
+	aczchef.primedbans.
+		players.
+			<player> (array of data)
+				Offenses (array of offenses by id)
+					0 (array of a little bit of data on an offense)
+						id (storage name of the offense)
+						notify (notify the player that they have thise offense)
+				Notify (Boolean to notify that their ban score is high)
+		Offenses.
+			<offense> (array of data for offense)
+				Amount (int of amount offense is worth)
+				Description (description of offfense)
+				Message (Message to display when ban score is added to a player.)
+				Disp. Name (string of name)
